@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Idea Studio Upload</title>
+  <link rel="icon" href="assets/icon2.jpg" type="image/png" sizes="32x32" />
+  <link rel="stylesheet" href="studio.css">
+</head>
+<body>
+  <div class="studio">
+    <!-- Sidebar -->
+<aside class="sidebar">
+  <div class="logo"><img src="assets/icon1.png" alt="Logo" class="logo-img">Studio</div>
+  <nav>
+    <a href="#">📤 Upload</a>
+    <a href="#">📁 Projects</a>
+    <a href="#">⚙️ Settings</a>
+  </nav>
+
+  <!-- Back Button -->
+  <div class="back-btn">
+    <a href="javascript:void(0)" onclick="history.back()">
+    <svg xmlns="http://www.w3.org/2000/svg" 
+         width="18" height="18" fill="none" stroke="currentColor" 
+         stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+         class="icon">
+      <path d="M15 18l-6-6 6-6"/>
+    </svg>
+    Back
+  </a>
+  </div>
+</aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <h1>Upload Your Idea</h1>
+
+      <form id="ideaForm" class="upload-card">
+        <label>Title</label>
+        <input type="text" id="title" placeholder="Your Idea Title" required />
+
+        <label>Description</label>
+        <textarea id="description" placeholder="Describe your idea..." required></textarea>
+
+        <label>Upload Image</label>
+        <input type="file" id="image" accept="image/*" multiple />
+        <div id="preview"></div>
+
+        <button type="submit">Submit Idea</button>
+      </form>
+      <!-- Projects Section -->
+<section class="projects-section">
+  <h2>Your Projects</h2>
+  <div class="projects-grid"></div>
+</section>
+
+    </main>
+  </div>
+  <script type="module" src="studio.js"></script>
+</body>
+</html>

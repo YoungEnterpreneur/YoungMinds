@@ -1,0 +1,327 @@
+/* ===== Global Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  background: url("assets/profile.jpg") center/cover no-repeat fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 🔥 Blur overlay on top of background */
+html::before,
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.45); /* thoda dark overlay readability ke liye */
+  z-index: 0;
+}
+
+/* ===== Layout ===== */
+.container {
+  padding: 40px;
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+  z-index: 1;
+}
+
+.row.gutters {
+  display: flex;
+  gap: 25px;
+  align-items: stretch;
+  transition: all 0.5s ease;
+}
+
+.col {
+  flex: 1;
+  transition: all 0.5s ease;
+}
+
+.left-box {
+  flex: 1;
+  color: #fff; /* 👈 default white text for left panel */
+}
+
+.right-box {
+  flex: 2;
+}
+
+/* ===== Card Glassmorphic ===== */
+.card {
+  margin-top: 70px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  padding: 25px;
+  height: 100%;
+  transition: all 0.5s ease;
+}
+
+.glass-inner {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 20px;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.section-content {
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.section:hover .section-content {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.section:hover .card {
+  transform: scale(1.02);
+}
+
+/* ===== Profile Left ===== */
+.user-profile {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #fff; /* 👈 ensures all text is white inside profile */
+}
+
+.user-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px dashed rgba(255,255,255,0.5);
+  margin: 0 auto 15px auto;
+  background: rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+.user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-avatar:hover {
+  box-shadow: 0 0 20px 5px rgba(255,255,255,0.9);
+  border: 2px solid rgba(255,255,255,0.9);
+}
+
+/* 👇 User text styling */
+.user-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff; /* white */
+  text-shadow: 0 0 10px rgba(255,255,255,0.8);
+}
+
+.user-email,
+.user-bio {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7); /* greyish white for secondary text */
+}
+
+/* ===== Headings ===== */
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255,255,255,0.8);
+  cursor: pointer;
+}
+
+/* ===== Inputs ===== */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: block;
+  color: rgba(255,255,255,0.85);
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.form-control::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+.form-control:focus {
+  border-color: #fff;
+  background: rgba(255,255,255,0.15);
+  box-shadow: 0 0 12px rgba(255,255,255,0.9);
+  outline: none;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  border: none;
+  border-radius: 14px;
+  padding: 12px 22px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255,255,255,0.4);
+}
+
+.btn-primary:hover {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 20px rgba(255,255,255,0.9);
+}
+
+.btn-secondary {
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+.btn-secondary:hover {
+  background: rgba(0,0,0,0.6);
+  box-shadow: 0 0 15px rgba(0,0,0,0.8);
+}
+
+/* ===== Box Expansion when section hover ===== */
+.section:hover ~ .row.gutters .left-box {
+  transform: translateX(-20px);
+  height: 110%;
+}
+
+.section:hover ~ .row.gutters .right-box {
+  flex: 3;
+}
+
+/* ===== Dropdown (Gender) Styling ===== */
+select.form-control {
+  appearance: none;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 14px;
+  padding: 12px 16px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+select.form-control:focus {
+  border-color: #fff;
+  background: rgba(255,255,255,0.15);
+  box-shadow: 0 0 12px rgba(255,255,255,0.9);
+  outline: none;
+}
+
+select.form-control option {
+  background: #333;
+  color: #fff;
+}
+
+/* 👇 Upload Button styling (chota + gap) */
+.user-profile .btn-primry {
+  padding: 6px 14px;       /* button chota ho gaya */
+  font-size: 13px;         /* text bhi thoda chota */
+  margin-top: 8px;         /* email ke niche halka gap */
+}
+
+/* ===== Glass Navbar (center pill) ===== */
+.navbar {
+  position: absolute;
+  top: 5px;
+  left: 51%;
+  transform: translateX(-50%);
+  padding: 0.9rem 2.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  max-width: 1100px;
+
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 50px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.9), 0 0 15px rgba(255, 255, 255, 0.7);
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  color: #e6eefc;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* 🔥 hover + active effects like gallery */
+.nav-links a:hover,
+.nav-links a.active {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255,255,255,0.9), 0 0 15px rgba(255,255,255,0.6);
+  transform: scale(1.08);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between logo and text */
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo-img {
+  width: 32px;  /* adjust as needed */
+  height: 32px; /* adjust as needed */
+}

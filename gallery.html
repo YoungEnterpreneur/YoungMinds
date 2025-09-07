@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="assets/icon2.png" type="image/png" sizes="32x32" />
+  <title>Idea Gallery</title>
+  <link rel="stylesheet" href="gallery.css">
+</head>
+<body class="gallery-page">
+  <!-- Blur Layer -->
+  <div class="blur-layer"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo"><img src="assets/icon1.png" alt="Logo" class="logo-img">YoungMinds</div>
+    <ul class="nav-links">
+      <li><a href="gallery.html">Home</a></li>
+      <li><a href="studio.html">Studio</a></li>
+      <li><a href="profile.html">Profile</a></li>
+    </ul>
+  </nav>
+  <div class="navbar-spacer"></div>
+
+  <!-- Carousel Box -->
+  <div class="carousel-box">
+    <main id="carousel">
+      <div class="item">
+        <img src="assets/sample1.jpg" alt="profile">
+        <div class="name">Idea 1</div>
+        <div class="occupation">By: John</div>
+        <div class="testimonial">A creative concept about smart farming automation.</div>
+      </div>
+      <div class="item">
+        <img src="assets/sample2.jpg" alt="profile">
+        <div class="name">Idea 2</div>
+        <div class="occupation">By: Sarah</div>
+        <div class="testimonial">Sustainable energy project for green future.</div>
+      </div>
+      <div class="item">
+        <img src="assets/sample3.jpg" alt="profile">
+        <div class="name">Idea 3</div>
+        <div class="occupation">By: Rahul</div>
+        <div class="testimonial">AI based education assistant for schools.</div>
+      </div>
+      <div class="item">
+        <img src="assets/sample4.jpg" alt="profile">
+        <div class="name">Idea 4</div>
+        <div class="occupation">By: Mehul</div>
+        <div class="testimonial">Healthcare device for early disease detection.</div>
+      </div>
+      <div class="item">
+        <img src="assets/sample5.jpg" alt="profile">
+        <div class="name">Idea 5</div>
+        <div class="occupation">By: Alice</div>
+        <div class="testimonial">Smart water management and irrigation system.</div>
+      </div>
+    </main>
+
+    <!-- Arrows -->
+    <button class="arrow left" onclick="prevSlide()">&#10094;</button>
+    <button class="arrow right" onclick="nextSlide()">&#10095;</button>
+
+    <!-- Dots -->
+    <div class="dots">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <!-- Scroll Down Arrow -->
+  <div class="scroll-down" onclick="scrollToGallery()">&#x25BC;</div>
+  <section id="product-gallery">
+  <h2 class="ideas-title">All Ideas</h2>
+  <div id="ideas" class="ideas-grid">
+    <p style="color:white;">Loading ideas...</p>
+  </div>
+  </section>
+
+
+  <script src="gallery.js"></script>
+  <script type="module" src="carousel.js"></script>
+  <script type="module" src="gallery_backend.js"></script>
+  <script>
+    // ===== Scroll Animation =====
+    const cards = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => observer.observe(card));
+  </script>
+</body>
+</html>

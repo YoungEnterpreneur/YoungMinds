@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Details</title>
+  <link rel="icon" href="assets/icon2.jpg" type="image/png" sizes="32x32" />
+  <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row gutters">
+
+      <!-- 🔥 Navbar (same as gallery page) -->
+      <nav class="navbar">
+        <div class="logo"><img src="assets/icon1.png" alt="Logo" class="logo-img">YoungMinds</div>
+        <ul class="nav-links">
+          <li><a href="gallery.html">Home</a></li>
+          <li><a href="studio.html">Studio</a></li>
+          <li><a href="profile.html" class="active">Profile</a></li>
+        </ul>
+      </nav>
+      <div class="navbar-spacer"></div>
+
+ <!-- LEFT SIDE PROFILE BOX -->
+<div class="col left-box">
+  <div class="card h-100 glass">
+    <div class="card-body">
+      <div class="account-settings">
+        <div class="user-profile">
+          <div class="user-avatar">
+            <img id="profilePic" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Profile">
+          </div>
+          <h5 class="user-name">Your Name</h5>
+          <h6 class="user-email">your@email.com</h6>
+
+          <!-- 👇 Upload Image Button -->
+          <input type="file" accept="image/*" style="display:none;">
+          <button class="btn btn-primary" onclick="document.getElementById('uploadPic').click()">Upload Image</button>
+        </div>
+        <div class="about">
+          <h5>About</h5>
+          <p>Write a short bio here... Something about you.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <!-- RIGHT SIDE FORM -->
+      <div class="col right-box">
+        <div class="card h-100 glass">
+          <div class="card-body">
+
+<!-- PERSONAL DETAILS -->
+<div class="section glass-inner">
+  <h6 class="section-title">Personal Details</h6>
+  <div class="section-content">
+    
+    <!-- Row 1 -->
+    <div class="row gutters">
+      <div class="col">
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" class="form-control" id="fullName" placeholder="Enter full name">
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="eMail">Email</label>
+          <input type="email" class="form-control" id="eMail" placeholder="Enter email">
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="text" class="form-control" id="phone" placeholder="Enter phone number">
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="row gutters">
+      <div class="col">
+        <div class="form-group">
+          <label for="school">School / College</label>
+          <input type="text" class="form-control" id="school" placeholder="Enter school/college">
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" class="form-control" id="age" placeholder="Enter Age">
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select id="gender" class="form-control">
+            <option value="" disabled selected>Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+            <!-- ADDRESS -->
+            <div class="section glass-inner">
+              <h6 class="section-title">Address</h6>
+              <div class="section-content">
+                <div class="row gutters">
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="Street">Street</label>
+                      <input type="text" class="form-control" id="Street" placeholder="Enter Street">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="ciTy">City</label>
+                      <input type="text" class="form-control" id="ciTy" placeholder="Enter City">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="sTate">State</label>
+                      <input type="text" class="form-control" id="sTate" placeholder="Enter State">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="zIp">Zip Code</label>
+                      <input type="text" class="form-control" id="zIp" placeholder="Zip Code">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PASSWORD -->
+            <div class="section glass-inner">
+              <h6 class="section-title">Change Password</h6>
+              <div class="section-content">
+                <div class="row gutters">
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="oldPass">Old Password</label>
+                      <input type="password" class="form-control" id="oldPass" placeholder="Enter old password">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="newPass">New Password</label>
+                      <input type="password" class="form-control" id="newPass" placeholder="Enter new password">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="confirmPass">Confirm Password</label>
+                      <input type="password" class="form-control" id="confirmPass" placeholder="Confirm new password">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ACTION BUTTONS -->
+            <div class="text-right" style="margin-top:20px;">
+              <button type="button" class="btn btn-secondary">Cancel</button>
+              <button type="button" class="btn btn-upload">Update</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script type="module" src="profile.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,250 @@
+/* ===== General ===== */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url("assets/userbg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+/* ===== Sidebar (Glassmorphic) ===== */
+.sidebar {
+  width: 220px;
+  min-height: 100vh;
+  background: rgba(20, 20, 20, 0.4); /* translucent */
+  backdrop-filter: blur(18px);
+  padding: 20px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  position: fixed;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h2 {
+  color: #fff;
+  font-size: 1.6rem;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+.sidebar nav a {
+  display: block;
+  color: #ddd;
+  text-decoration: none;
+  margin: 15px 0;
+  font-size: 1.1rem;
+  padding: 10px 14px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.sidebar nav a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+/* ===== Main Content ===== */
+.main-content {
+  margin-left: 240px;
+  padding: 40px;
+}
+
+h1, h2 {
+  color: #fff;
+}
+
+/* ===== Upload Form (Glassmorphic Card) ===== */
+.upload-card {
+  background: rgba(20, 20, 20, 0.35); /* let bg show through */
+  border-radius: 20px;
+  padding: 25px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: 0.3s;
+}
+
+.upload-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+}
+
+.upload-card label {
+  display: block;
+  margin: 15px 0 5px;
+  font-weight: bold;
+  color: #eee;
+}
+
+.upload-card input,
+.upload-card textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(30, 30, 30, 0.4);
+  color: #fff;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.upload-card input:focus,
+.upload-card textarea:focus {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.upload-card button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  backdrop-filter: blur(10px);
+}
+
+.upload-card button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+/* ===== Projects Section ===== */
+.projects-section {
+  margin-top: 50px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.project-card {
+  background: rgba(20, 20, 20, 0.35);
+  border-radius: 16px;
+  overflow: hidden;
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* ===== Image Slider ===== */
+.image-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-slider img {
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.4s ease-in-out;
+}
+
+.image-slider button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(50, 50, 50, 0.6);
+  border: none;
+  color: #f5f5f5;
+  font-size: 1.5rem;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: 0.3s;
+  backdrop-filter: blur(6px);
+}
+
+.image-slider button:hover {
+  background: rgba(255, 255, 255, 0.25);
+} 
+
+.image-slider .prev { left: 10px; }
+.image-slider .next { right: 10px; }
+
+.project-info {
+  padding: 15px;
+}
+
+.project-info h3 {
+  margin: 0;
+  color: #fff;
+}
+
+.project-info p {
+  color: #ccc;
+  font-size: 0.9rem;
+  margin: 8px 0;
+}
+
+/* Fade effect */
+.fade-out { opacity: 0; }
+.fade-in { opacity: 1; }
+
+.back-btn a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* spacing between icon & text */
+  text-align: center;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+.back-btn a:hover {
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transform: translateY(-2px);
+}
+
+.back-btn .icon {
+  stroke: #fff; /* keep arrow white */
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* pushes back button to bottom */
+  height: 100vh; /* full height sidebar */
+  padding: 20px;
+}
+
+.back-btn {
+  margin-top: auto;
+  margin-bottom: 40px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between logo and text */
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo-img {
+  width: 32px;  /* adjust as needed */
+  height: 32px; /* adjust as needed */
+}
